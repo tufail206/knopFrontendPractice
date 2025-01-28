@@ -1,9 +1,10 @@
 import React from 'react'
+import UITypography from '../../components/TypoGraphy'
 
 const Home:React.FC = () => {
   return (
     <div>
-      <h2>Home page</h2>
+      <UITypography  fontSize={30} >Home page</UITypography>
     </div>
   )
 }

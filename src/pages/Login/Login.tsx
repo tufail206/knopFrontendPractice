@@ -1,11 +1,15 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Button } from "@mui/material";
+import image1 from '../../assets/images/Rectangle 8.png'
+import image2 from '../../assets/images/Rectangle 11.png'
+import image3 from '../../assets/images/Rectangle 9.png'
+import image4 from '../../assets/images/Rectangle 10.png'
 import UITextInput  from "../../components/TextField"; // import your custom component
-import {  useSubmit } from "react-router-dom";
-import { InputContainer, LoginContainer, LoginForm, LoginImageContainer } from "./styled";
+// import {  useSubmit } from "react-router-dom";
+import { InputContainer, LoginContainer, LoginForm, LoginImageContainer, SubImageContainer } from "./styled";
 import ContainedUIButton from "../../components/Buttons/ContainedButton";
 import UITypography from "../../components/TypoGraphy";
+import { Link } from "react-router-dom";
 
 interface FormValues {
   
@@ -36,7 +40,15 @@ const MyForm: React.FC = () => {
   return (
     <LoginContainer>
       <LoginImageContainer>
-        img box
+        <SubImageContainer>
+       <img src={image1} alt="" />
+          <img src={image2} className="sec"  alt="" />
+        </SubImageContainer>
+        <SubImageContainer>
+       <img src={image3}  alt="" />
+       <img src={image4} alt="" />
+     
+        </SubImageContainer>
       </LoginImageContainer>
       <LoginForm>
         <UITypography color="black" fontSize={24} fontWeight={700}>Let’s Sign In 👇 </UITypography>
@@ -75,7 +87,7 @@ to your account. </UITypography>
               rules={{ required: "password is required" }}
             />
           </InputContainer>
-          <UITypography color="black" fontSize={16} fontWeight={400} mt={3} paragraph align="right">Forgot Password </UITypography>
+          <UITypography color="black" fontSize={16} fontWeight={400}  mt={3} paragraph align="right"> <Link to={"/forgotPassword"} color="blue">Forgot Password </Link> </UITypography>
           <ContainedUIButton label="login" type="submit" variant="contained" fs={23} color="primary"/>
            
          

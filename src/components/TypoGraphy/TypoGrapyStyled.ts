@@ -10,7 +10,7 @@ const StyledTypographyUI = styled(Typography)<{
 }>(
     ({theme, weight, color, paragraph }) => ({
         fontWeight: weight || 'normal',
-        color: theme.palette.text.secondary  || 'inherit',
+        color: color || theme.palette.text.secondary  || 'inherit',
         marginBottom: paragraph ? '16px' : '0',
             
     })
