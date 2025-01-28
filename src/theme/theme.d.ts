@@ -1,68 +1,82 @@
-import { PaletteOptions as PaletteOptionsMUI, ThemeOptions as ThemeOptionsMUI ,TypographyProps} from "@mui/material";
+import {
+    PaletteOptions as PaletteOptionsMUI,
+    SimplePaletteColorOptions as SimplePaletteColorOptionsMUI,
+    ThemeOptions as ThemeOptionsMUI,
+    TypeText as TypeTextMUI,
+    TypographyProps as MuiTypographyProps
+} from '@mui/material';
 
+PaletteOptions;
 declare module '@mui/material/styles' {
-     
     interface PaletteOptions extends PaletteOptionsMUI {
-        
+        mainBg: string;
+       
+
+     
+
+        button: {
+            primary: string;
+        };
+
+        border: {
+            primary: string;
+        };
+
+        text: {
+            primary: string;
+            secondary: string;
+        };
+
+        background: {
+            primary: string;
+        };
     }
-
-
-    interface Shadows {
-        //small , medium , large
-        small: string;
-        medium: string;
-        large: string;
-    }
-
-
  
-  
 
+    interface TypographyProps extends MuiTypographyProps {
+        children: React.ReactNode;
+        weight?: number;
+        color?: string;
+        as?: React.ElementType; // Allows changing the element type (like h1, p, etc.)
+        sx?: React.CSSProperties; // For additional styling using `sx` prop
+        paragraph?: boolean;
+    }
+    interface Palette extends PaletteOptions { }
 
-
-    interface ColorSchemes {
-        light: string;
-        dark: string;
-        contrast: string;
-        contrastText: string;
-        primaryText: string;
-        secondaryText: string;
-        background: string;
-        backgroundText: string;
-        backgroundSecondary: string;
-        backgroundContrast: string;
-        backgroundContrastText: string;
-        backgroundContrastSecondary: string;
-        backgroundContrastPrimary: string;
-        backgroundContrastSecondaryText: string;
-        backgroundContrastPrimaryText: string;
-        backgroundContrastTertiary: string;
-        backgroundContrastTertiaryText: string;
-        backgroundContrastQuaternary: string;
-        backgroundContrastQuaternaryText: string;
-        backgroundContrastQuinary: string;
-        backgroundContrastQuinaryText: string;
+    interface SimplePaletteColorOptions extends SimplePaletteColorOptionsMUI {
+        shade1?: string;
+        shade2?: string;
     }
 
-    interface TypographyProps{
-        fontFamily?: string;
-        fontColor?: string;
-        
-
+    interface TypeText extends TypeTextMUI {
+        main: string;
+        shade1: string;
+        shade2: string;
+        shade3: string;
+        shade4: string;
+        shade5: string;
     }
-    interface Theme {
-        customShadow?: Partial<Shadows>;
-        colorSchemes?:Partial<ColorSchemes>;
-
+     interface Space{
+        spaceWide:number;
+        spaceNarrow:number;
+        spaceExtraWide:number;
+     }
+    interface Shape {
+        borderRadius: number;
+        borderRadiusSmall: number;
+        borderRadiusMedium: number;
+        borderRadiusLarge: number;
+        borderRadiusRound: number;
     }
-
+    
     interface ThemeOptions extends ThemeOptionsMUI {
-        customShadow?: Partial<Shadows>
-        colorSchemes?: Partial<ColorSchemes>
-        typography?: Partial<Typography> ;
-        background?: Partial<Background>
+        shape?: Partial<Shape>;
+        shadow?: string[];
+        space?: Partial<Space>;
+    }
 
-
-
+    interface Theme {
+        shape: Shape;
+        space: Space;
     }
 }

@@ -1,40 +1,45 @@
 import { createTheme } from "@mui/material";
 
-export const AppThme=createTheme({
-    palette: {
-        primary: {
-            main: '#1976D2',
-          
+ const AppTheme=createTheme({
+    palette:{
+         mainBg:"#1976d2",
+         primary:{
+            main:'#1976d2',
+           
         },
-        secondary: {
-            main: '#1976D4',
-        },
-        
-        text: {
-            primary: '#fff',
-            secondary: '#757575',
-        },
+      border:{
+          primary:"#707070"
+      },
+      button:{
+          primary:"##2C64E3",
+       
+      },
+      text:{
+          primary: '#fff5fC',
+          secondary: '#252B5C',
+         
+      }
         
     },
-   customShadow: {
-   small:"0px 0px 10px -4px black",
-   medium:"0px 0px 20px 1px black",
-   large:"0px 0px 30px 2px black",
-   },
-   typography:{
-    fontFamily: "'Poppins', sans-serif",
-    fontSize: 14,
-    fontWeightLight: 300,
-    fontWeightRegular: 400,
-    fontWeightMedium: 500,
-    fontWeightBold: 700,  
-   },
-   colorSchemes:{
-    light: '#fff',
-    dark: '#000',
-    contrast: '#baafaf',
-       primaryText: '#252B5C',
-       secondaryText: '#53587A',
-
-   }
+   
+     shape: {
+         borderRadius: 8,
+         borderRadiusSmall: 4, // Small radius for specific cases
+         borderRadiusMedium: 8, // Medium radius for general components
+         borderRadiusLarge: 16, // Large radius for cards, dialogs, etc.
+         borderRadiusRound: 50,
+     },
+     shadow:[
+            'none',
+            "0px 0px 10px 0px black",
+            "0px 0px 10px 0px black"
+     ],
+     space:{
+        spaceWide:12,
+        spaceExtraWide:30,
+        spaceNarrow:20,
+     }
+   
 })
+
+export default AppTheme;
