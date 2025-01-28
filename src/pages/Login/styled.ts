@@ -1,14 +1,13 @@
 import { styled ,Box} from "@mui/material";
 
-export const LoginContainer=styled(Box)(({theme})=>({
+export const LoginContainer=styled(Box)`
     width: '100%',
     minHeight: '100vh',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
    
-    
-}))
+`
 export const LoginImageContainer=styled(Box)(({theme})=>({
     width:"621px",
     minHeight:"470px",
